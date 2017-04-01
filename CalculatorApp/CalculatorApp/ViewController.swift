@@ -19,10 +19,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSubtractOUTLET: UIButton!
     @IBOutlet weak var btnMultiplyOUTLET: UIButton!
     @IBOutlet weak var btnDivideOUTLET: UIButton!
+    
     @IBOutlet weak var btnClearOUTLET: UIButton!
     
-    
     let buttonBGColor = UIColor.lightGray
+//    let buttonBGColor = UIColor.
     let buttonTextColor = UIColor.darkGray
     
     override func viewDidLoad() {
@@ -72,7 +73,6 @@ class ViewController: UIViewController {
     @IBAction func btnDivideACTION(_ sender: UIButton) {
         print("Dividing...")
     }
-   
     @IBAction func btnClearACTION(_ sender: UIButton) {
         print("Cleared!")
     }
