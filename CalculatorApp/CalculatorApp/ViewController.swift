@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSubtractOUTLET: UIButton!
     @IBOutlet weak var btnMultiplyOUTLET: UIButton!
     @IBOutlet weak var btnDivideOUTLET: UIButton!
+    @IBOutlet weak var btnClearOUTLET: UIButton!
+    
     
     let buttonBGColor = UIColor.lightGray
     let buttonTextColor = UIColor.darkGray
@@ -54,6 +56,8 @@ class ViewController: UIViewController {
         btnSubtractOUTLET.titleLabel?.textColor = buttonTextColor
         btnMultiplyOUTLET.titleLabel?.textColor = buttonTextColor
         btnDivideOUTLET.titleLabel?.textColor = buttonTextColor
+        
+        btnClearOUTLET.titleLabel?.textColor = buttonTextColor
     }
 
     @IBAction func btnAddACTION(_ sender: UIButton) {
@@ -69,6 +73,9 @@ class ViewController: UIViewController {
         print("Dividing...")
     }
    
+    @IBAction func btnClearACTION(_ sender: UIButton) {
+        print("Cleared!")
+    }
 
 
 }
