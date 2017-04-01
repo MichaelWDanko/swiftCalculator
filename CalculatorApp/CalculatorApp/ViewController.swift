@@ -20,11 +20,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnMultiplyOUTLET: UIButton!
     @IBOutlet weak var btnDivideOUTLET: UIButton!
     
+    let buttonBGColor = UIColor.lightGray
+    let buttonTextColor = UIColor.darkGray
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         initText()
+        initBtn()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,21 +36,37 @@ class ViewController: UIViewController {
     }
     
     func initText(){
-        lblHeader.text?.uppercased()
+        lblHeader.text = lblHeader.text?.uppercased()
+        lblHeader.textColor = UIColor.darkGray
         
+        txtFirstNumber.borderStyle = .roundedRect
+        txtSecondNumber.borderStyle = .roundedRect
+        txtResults.borderStyle = .roundedRect
+    }
+    
+    func initBtn (){
+        btnAddOUTLET.backgroundColor = buttonBGColor
+        btnSubtractOUTLET.backgroundColor = buttonBGColor
+        btnMultiplyOUTLET.backgroundColor = buttonBGColor
+        btnDivideOUTLET.backgroundColor = buttonBGColor
+        
+        btnAddOUTLET.titleLabel?.textColor = buttonTextColor
+        btnSubtractOUTLET.titleLabel?.textColor = buttonTextColor
+        btnMultiplyOUTLET.titleLabel?.textColor = buttonTextColor
+        btnDivideOUTLET.titleLabel?.textColor = buttonTextColor
     }
 
     @IBAction func btnAddACTION(_ sender: UIButton) {
-        
+        print("Adding...")
     }
     @IBAction func btnSubtractACTION(_ sender: UIButton) {
-        
+        print("Subtracting...")
     }
     @IBAction func btnMultiplyACTION(_ sender: UIButton) {
-        
+        print("Multiplying...")
     }
     @IBAction func btnDivideACTION(_ sender: UIButton) {
-        
+        print("Dividing...")
     }
    
 
