@@ -69,6 +69,9 @@ class ViewController: UIViewController {
     }
 
     func numberify() {
+        /*
+        Add methods here to remove any characters or spaces from the String
+        */
         firstDigit = Double(txtFirstNumber.text!)!
         secondDigit = Double(txtSecondNumber.text!)!
         print("The firstDigit is ", firstDigit)
