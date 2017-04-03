@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtFirstNumber: UITextField!
     @IBOutlet weak var txtSecondNumber: UITextField!
     @IBOutlet weak var txtResults: UITextField!
+    @IBOutlet weak var lblErrorMessage: UILabel!
     
     @IBOutlet weak var btnAddOUTLET: UIButton!
     @IBOutlet weak var btnSubtractOUTLET: UIButton!
@@ -22,9 +23,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnClearOUTLET: UIButton!
     
-    let buttonBGColor = UIColor.lightGray
-//    let buttonBGColor = UIColor.
-    let buttonTextColor = UIColor.darkGray
+    let buttonBGColor = UIColor.init(red: 153/255, green: 187/255, blue: 255/255, alpha: 1/1)
+    let buttonTextColor = UIColor.black
     
     var firstDigit = Double()
     var secondDigit = Double()
@@ -59,12 +59,11 @@ class ViewController: UIViewController {
         btnMultiplyOUTLET.backgroundColor = buttonBGColor
         btnDivideOUTLET.backgroundColor = buttonBGColor
         
-        btnAddOUTLET.titleLabel?.textColor = buttonTextColor
-        btnSubtractOUTLET.titleLabel?.textColor = buttonTextColor
-        btnMultiplyOUTLET.titleLabel?.textColor = buttonTextColor
-        btnDivideOUTLET.titleLabel?.textColor = buttonTextColor
-        
-        btnClearOUTLET.titleLabel?.textColor = buttonTextColor
+//        btnAddOUTLET.titleLabel?.textColor = buttonTextColor
+//        btnSubtractOUTLET.titleLabel?.textColor = buttonTextColor
+//        btnMultiplyOUTLET.titleLabel?.textColor = buttonTextColor
+//        btnDivideOUTLET.titleLabel?.textColor = buttonTextColor
+//        btnClearOUTLET.titleLabel?.textColor = buttonTextColor
     }
 
     func numberify() {
@@ -91,12 +90,15 @@ class ViewController: UIViewController {
         }
     }
     
+    //Pass a UITextField to this function and it can change the background color if there is an error.
     func displayTextAlert( textField : UITextField , status : Bool) {
         let alertTextColor = UIColor.init(red: 220/255, green: 10/255, blue: 20/255, alpha: 0.4/1)
         if status == true {
             textField.backgroundColor = alertTextColor
+            lblErrorMessage.isHidden = false
         } else {
             textField.backgroundColor = UIColor.white
+            lblErrorMessage.isHidden = true
         }
     }
     
@@ -128,6 +130,9 @@ class ViewController: UIViewController {
     @IBAction func btnClearACTION(_ sender: UIButton) {
         txtFirstNumber.text = ""
         txtSecondNumber.text = ""
+        displayTextAlert(textField: txtFirstNumber, status: false)
+        displayTextAlert(textField: txtSecondNumber, status: false)
+        txtResults.text = ""
     }
 
 
