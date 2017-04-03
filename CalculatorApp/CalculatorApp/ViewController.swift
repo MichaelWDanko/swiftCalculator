@@ -69,13 +69,25 @@ class ViewController: UIViewController {
     }
 
     func numberify() {
-        /*
-        Add methods here to remove any characters or spaces from the String
-        */
-        firstDigit = Double(txtFirstNumber.text!)!
-        secondDigit = Double(txtSecondNumber.text!)!
-        print("The firstDigit is ", firstDigit)
-        print("The secondDigit is ", secondDigit)
+        // isNumeric returns a boolean of if a string passed to it is a number.
+        func isNumeric (numericTest: String) -> Bool {
+            return Double(numericTest) != nil
+        }
+        
+        // If the first text field has a number, then convert it to a double
+        if isNumeric(numericTest: txtFirstNumber.text!) {
+            print("first number is a number")
+            firstDigit = Double(txtFirstNumber.text!)!
+        } else {
+            print("first number is not a number")
+        }
+        // If the second text field has a number, then convert it to a double
+        if isNumeric(numericTest: txtSecondNumber.text!) {
+            print("second number is a number")
+            secondDigit = Double(txtSecondNumber.text!)!
+        } else {
+            print("second number is not a number")
+        }
     }
     
     
