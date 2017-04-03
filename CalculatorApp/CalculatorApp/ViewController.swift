@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnClearOUTLET: UIButton!
     
     let buttonBGColor = UIColor.init(red: 153/255, green: 187/255, blue: 255/255, alpha: 1/1)
-    let buttonTextColor = UIColor.black
+    let buttonTextColor = UIColor.init(red: 26/255, green: 102/255, blue: 255/255, alpha: 1/1)
     
     var firstDigit = Double()
     var secondDigit = Double()
@@ -59,11 +59,12 @@ class ViewController: UIViewController {
         btnMultiplyOUTLET.backgroundColor = buttonBGColor
         btnDivideOUTLET.backgroundColor = buttonBGColor
         
-//        btnAddOUTLET.titleLabel?.textColor = buttonTextColor
-//        btnSubtractOUTLET.titleLabel?.textColor = buttonTextColor
-//        btnMultiplyOUTLET.titleLabel?.textColor = buttonTextColor
-//        btnDivideOUTLET.titleLabel?.textColor = buttonTextColor
-//        btnClearOUTLET.titleLabel?.textColor = buttonTextColor
+        btnAddOUTLET.setTitleColor(buttonTextColor, for: .normal)
+        btnSubtractOUTLET.setTitleColor(buttonTextColor, for: .normal)
+        btnMultiplyOUTLET.setTitleColor(buttonTextColor, for: .normal)
+        btnDivideOUTLET.setTitleColor(buttonTextColor, for: .normal)
+        btnClearOUTLET.setTitleColor(buttonTextColor, for: .normal)
+        
     }
 
     func numberify() {
