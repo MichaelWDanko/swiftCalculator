@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculator" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd8-0J-cSp">
-                                <frame key="frameInset" minX="16" minY="68" width="343" height="39"/>
+                                <frame key="frameInset" minX="13" minY="57" width="343" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -86,6 +86,13 @@
                                     <action selector="btnClearACTION:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mhu-Ea-rlH"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter only numbers in the highlighted fields" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-fG-lCi">
+                                <frame key="frameInset" minX="95" minY="99" width="179" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.089263750714253187" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -95,6 +102,7 @@
                         <outlet property="btnDivideOUTLET" destination="y8D-jE-EhW" id="FRb-Ah-eCj"/>
                         <outlet property="btnMultiplyOUTLET" destination="1GS-ZU-PKE" id="GKW-mY-Rhh"/>
                         <outlet property="btnSubtractOUTLET" destination="wdL-cp-lpe" id="KyA-gU-QA2"/>
+                        <outlet property="lblErrorMessage" destination="JqV-fG-lCi" id="YZz-Hc-G0S"/>
                         <outlet property="lblHeader" destination="hd8-0J-cSp" id="hZf-Os-fPV"/>
                         <outlet property="txtFirstNumber" destination="uoU-yd-K5Z" id="n6u-JT-yM1"/>
                         <outlet property="txtResults" destination="zYm-jb-L4z" id="ObV-2U-har"/>
