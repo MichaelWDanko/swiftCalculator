@@ -26,9 +26,9 @@ class ViewController: UIViewController {
 //    let buttonBGColor = UIColor.
     let buttonTextColor = UIColor.darkGray
     
-    var firstDigit : Double = 0
-    var secondDigit : Double = 0
-    var finalResult : Double = 0
+    var firstDigit = Double()
+    var secondDigit = Double()
+    var finalResult = Double()
     /*
      Need to be able to initialize a variable without declaring it
      */
