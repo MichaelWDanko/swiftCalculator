@@ -69,8 +69,8 @@ class ViewController: UIViewController {
     }
 
     func numberify() {
-        let firstDigit = Double(txtFirstNumber.text!)
-        let secondDigit = Double(txtSecondNumber.text!)
+        firstDigit = Double(txtFirstNumber.text!)!
+        secondDigit = Double(txtSecondNumber.text!)!
         print("The firstDigit is ", firstDigit)
         print("The secondDigit is ", secondDigit)
     }
@@ -79,31 +79,31 @@ class ViewController: UIViewController {
     @IBAction func btnAddACTION(_ sender: UIButton) {
         print("Adding...")
         numberify()
-        
         finalResult = firstDigit + secondDigit
         txtResults.text = String(finalResult)
     }
+    
     @IBAction func btnSubtractACTION(_ sender: UIButton) {
         print("Subtracting...")
         numberify()
-        
         finalResult = firstDigit - secondDigit
         txtResults.text = String(finalResult)
     }
+    
     @IBAction func btnMultiplyACTION(_ sender: UIButton) {
         print("Multiplying...")
         numberify()
-        
         finalResult = firstDigit * secondDigit
         txtResults.text = String(finalResult)
     }
+    
     @IBAction func btnDivideACTION(_ sender: UIButton) {
         print("Dividing...")
         numberify()
-        
-//        finalResult = firstDigit / secondDigit
-//        txtResults.text = String(finalResult)
+        finalResult = firstDigit / secondDigit
+        txtResults.text = String(finalResult)
     }
+    
     @IBAction func btnClearACTION(_ sender: UIButton) {
         print("Cleared!")
         txtFirstNumber.text = ""
