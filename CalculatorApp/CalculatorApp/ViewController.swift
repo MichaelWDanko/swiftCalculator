@@ -29,9 +29,8 @@ class ViewController: UIViewController {
     var firstDigit = Double()
     var secondDigit = Double()
     var finalResult = Double()
-    /*
-     Need to be able to initialize a variable without declaring it
-     */
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,51 +75,57 @@ class ViewController: UIViewController {
         
         // If the first text field has a number, then convert it to a double
         if isNumeric(numericTest: txtFirstNumber.text!) {
-            print("first number is a number")
+            displayTextAlert(textField: txtFirstNumber, status : false)
             firstDigit = Double(txtFirstNumber.text!)!
         } else {
-            print("first number is not a number")
+            displayTextAlert(textField: txtFirstNumber, status : true)
         }
+        
+        
         // If the second text field has a number, then convert it to a double
         if isNumeric(numericTest: txtSecondNumber.text!) {
-            print("second number is a number")
+            displayTextAlert(textField: txtSecondNumber, status : false)
             secondDigit = Double(txtSecondNumber.text!)!
         } else {
-            print("second number is not a number")
+            displayTextAlert(textField: txtSecondNumber, status : true)
+        }
+    }
+    
+    func displayTextAlert( textField : UITextField , status : Bool) {
+        let alertTextColor = UIColor.init(red: 220/255, green: 10/255, blue: 20/255, alpha: 0.4/1)
+        if status == true {
+            textField.backgroundColor = alertTextColor
+        } else {
+            textField.backgroundColor = UIColor.white
         }
     }
     
     
     @IBAction func btnAddACTION(_ sender: UIButton) {
-        print("Adding...")
         numberify()
         finalResult = firstDigit + secondDigit
         txtResults.text = String(finalResult)
     }
     
     @IBAction func btnSubtractACTION(_ sender: UIButton) {
-        print("Subtracting...")
         numberify()
         finalResult = firstDigit - secondDigit
         txtResults.text = String(finalResult)
     }
     
     @IBAction func btnMultiplyACTION(_ sender: UIButton) {
-        print("Multiplying...")
         numberify()
         finalResult = firstDigit * secondDigit
         txtResults.text = String(finalResult)
     }
     
     @IBAction func btnDivideACTION(_ sender: UIButton) {
-        print("Dividing...")
         numberify()
         finalResult = firstDigit / secondDigit
         txtResults.text = String(finalResult)
     }
     
     @IBAction func btnClearACTION(_ sender: UIButton) {
-        print("Cleared!")
         txtFirstNumber.text = ""
         txtSecondNumber.text = ""
     }
