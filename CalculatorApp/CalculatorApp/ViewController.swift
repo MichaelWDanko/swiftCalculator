@@ -26,6 +26,13 @@ class ViewController: UIViewController {
 //    let buttonBGColor = UIColor.
     let buttonTextColor = UIColor.darkGray
     
+    var firstDigit : Double = 0
+    var secondDigit : Double = 0
+    var finalResult : Double = 0
+    /*
+     Need to be able to initialize a variable without declaring it
+     */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -61,20 +68,46 @@ class ViewController: UIViewController {
         btnClearOUTLET.titleLabel?.textColor = buttonTextColor
     }
 
+    func numberify() {
+        let firstDigit = Double(txtFirstNumber.text!)
+        let secondDigit = Double(txtSecondNumber.text!)
+        print("The firstDigit is ", firstDigit)
+        print("The secondDigit is ", secondDigit)
+    }
+    
+    
     @IBAction func btnAddACTION(_ sender: UIButton) {
         print("Adding...")
+        numberify()
+        
+        finalResult = firstDigit + secondDigit
+        txtResults.text = String(finalResult)
     }
     @IBAction func btnSubtractACTION(_ sender: UIButton) {
         print("Subtracting...")
+        numberify()
+        
+        finalResult = firstDigit - secondDigit
+        txtResults.text = String(finalResult)
     }
     @IBAction func btnMultiplyACTION(_ sender: UIButton) {
         print("Multiplying...")
+        numberify()
+        
+        finalResult = firstDigit * secondDigit
+        txtResults.text = String(finalResult)
     }
     @IBAction func btnDivideACTION(_ sender: UIButton) {
         print("Dividing...")
+        numberify()
+        
+//        finalResult = firstDigit / secondDigit
+//        txtResults.text = String(finalResult)
     }
     @IBAction func btnClearACTION(_ sender: UIButton) {
         print("Cleared!")
+        txtFirstNumber.text = ""
+        txtSecondNumber.text = ""
     }
 
 
