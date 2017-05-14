@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    //MARK: Variables
+    
     @IBOutlet weak var lblHeader: UILabel!
     @IBOutlet weak var txtFirstNumber: UITextField!
     @IBOutlet weak var txtSecondNumber: UITextField!
@@ -63,10 +66,10 @@ class ViewController: UIViewController {
         btnSubtractOUTLET.setTitleColor(buttonTextColor, for: .normal)
         btnMultiplyOUTLET.setTitleColor(buttonTextColor, for: .normal)
         btnDivideOUTLET.setTitleColor(buttonTextColor, for: .normal)
-        btnClearOUTLET.setTitleColor(buttonTextColor, for: .normal)
-        
+    
     }
 
+    //MARK: Functions
     func numberify() {
         // isNumeric returns a boolean of if a string passed to it is a number.
         func isNumeric (numericTest: String) -> Bool {
@@ -129,11 +132,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnClearACTION(_ sender: UIButton) {
-        txtFirstNumber.text = ""
-        txtSecondNumber.text = ""
+        txtFirstNumber.text?.removeAll()
+        txtSecondNumber.text?.removeAll()
         displayTextAlert(textField: txtFirstNumber, status: false)
         displayTextAlert(textField: txtSecondNumber, status: false)
-        txtResults.text = ""
+        txtResults.text?.removeAll()
     }
 
 
